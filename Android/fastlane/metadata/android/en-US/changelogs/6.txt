@@ -1,0 +1,7 @@
+added Canary Mode
+some small bug fixes
+added dark mode support
+Spanish texts (Thanks, Lena Radau!)
+Chinese (not yet complete)
+no CLA anymore
+iOS port, at last
