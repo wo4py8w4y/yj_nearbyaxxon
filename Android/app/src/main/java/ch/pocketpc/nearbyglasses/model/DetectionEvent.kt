@@ -49,64 +49,32 @@ data class DetectionEvent(
     }
 
     companion object {
-        // Meta Platforms, Inc. (formerly Facebook)
-        const val META_COMPANY_ID1 = 0x01AB
-        const val META_COMPANY_ID2 = 0x058E
-        // EssilorLuxottica - needs more verification, but OAKLEY and some newer Meta models likely have that
-        const val ESSILOR_COMPANY_ID = 0x0D53
-        //Snap (Snapchat) Spectacles
-        const val SNAP_COMPANY_ID = 0x03C2
+        const val AXON_COMPANY_ID = 0x0259
 
-        fun isSmartGlasses(context: Context, companyId: Int?,deviceName: String?): Pair<Boolean, String>
-        {
+        fun isSmartGlasses(context: Context, companyId: Int?, deviceName: String?): Pair<Boolean, String> {
             val reasons = mutableListOf<String>()
 
             // Check company ID
-            if (companyId == META_COMPANY_ID1) {
-                //reasons.add("Meta Company ID (0x01AB)")
+            if (companyId == AXON_COMPANY_ID) {
                 reasons.add(context.getString(
                     R.string.reason_meta_company_id,
-                    "0x01AB"))
-            }
-            if (companyId == META_COMPANY_ID2) {
-                //reasons.add("Meta Company ID (0x058E)")
-                reasons.add(context.getString(
-                    R.string.reason_meta_company_id,
-                    "0x058E"))
-            }
-
-            if (companyId == ESSILOR_COMPANY_ID) {
-                //reasons.add("EssilorLuxottica Company ID (0x0D53)")
-                reasons.add(context.getString(
-                    R.string.reason_essilor_company_id,
-                    "0x0D53"))
-            }
-
-            if (companyId == SNAP_COMPANY_ID) {
-                //reasons.add("Snap Company ID (0x03C2)")
-                reasons.add(context.getString(
-                    R.string.reason_snap_company_id,
-                    "0x03C2"))
+                    "0x0259"))
             }
 
             // Check device name
             deviceName?.let { name ->
                 val nameLower = name.lowercase()
                 when {
-                    //nameLower.contains("rayban") -> reasons.add("Device name contains 'rayban'")
-                    //nameLower.contains("ray-ban") -> reasons.add("Device name contains 'ray-ban'")
-                    //nameLower.contains("ray ban") -> reasons.add("Device name contains 'ray ban'")
-
-                    nameLower.contains("rayban") -> reasons.add(
-                        context.getString(R.string.reason_name_contains,"rayban")
+                    nameLower.contains("b3-x") -> reasons.add(
+                        context.getString(R.string.reason_name_contains, "B3-X")
                     )
-                    nameLower.contains("ray-ban") -> reasons.add(
-                        context.getString(R.string.reason_name_contains,"ray-ban")
+                    nameLower.contains("b4-x") -> reasons.add(
+                        context.getString(R.string.reason_name_contains, "B4-X")
                     )
-                    nameLower.contains("ray ban") -> reasons.add(
-                        context.getString(R.string.reason_name_contains,"ray ban")
+                    nameLower.contains("signal sidearm-") -> reasons.add(
+                        context.getString(R.string.reason_name_contains, "Signal Sidearm-")
                     )
-                else -> {} // do nothing
+                    else -> {} // do nothing
                 }
             }
 
@@ -115,16 +83,8 @@ data class DetectionEvent(
 
         fun getCompanyName(context: Context, companyId: Int): String {
             return when (companyId) {
-                //META_COMPANY_ID1 -> "Meta Platforms, Inc."
-                //META_COMPANY_ID2 -> "Meta Platforms, Inc."
-                //ESSILOR_COMPANY_ID -> "EssilorLuxottica"
-                META_COMPANY_ID1,
-                META_COMPANY_ID2 ->
+                AXON_COMPANY_ID ->
                     context.getString(R.string.company_meta)
-                ESSILOR_COMPANY_ID ->
-                    context.getString(R.string.company_essilor)
-                SNAP_COMPANY_ID ->
-                    context.getString(R.string.company_snap)
                 else -> //"Unknown (0x${String.format("%04X", companyId)})"
                     context.getString(
                         R.string.company_unknown,

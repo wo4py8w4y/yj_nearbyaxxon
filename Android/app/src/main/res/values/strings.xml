@@ -46,7 +46,7 @@
     <string name="summaryDebugAdvonly">When enabled, only BLE advertisement (ADV) lines are shown in the debug log.</string>
     <string name="nothing_to_export">No detections to export</string>
     <string name="titleDebugCompanyIds">Override Company IDs</string>
-    <string name="summaryDebugCompanyIds">Currently: %1$s. If you enter one or multiple IDs to detect, in little endian, hex notation, they are used instead of the defaults ("0x01AB,0x058E,0x0D53"). This also triggers notifications for the new IDs.</string>
+    <string name="summaryDebugCompanyIds">Currently: %1$s. If you enter one or multiple IDs to detect, in little endian, hex notation, they are used instead of the defaults ("0x0259"). This also triggers notifications for the new IDs.</string>
     <string name="none_in_parentheses">(none)</string>
     <string name="summaryApp">Detects smart glasses via Bluetooth LE</string>
     <string name="titleMethod">Detection Method</string>
@@ -139,11 +139,11 @@ DO NOT HARASS ANYONE AT ALL.]]></string>
     <string name="notification_service_title">Scanning for smart glasses nearby</string>
     <string name="notification_service_text">Background scanning is active</string>
     <!-- for messages and log -->
-    <string name="reason_meta_company_id">Meta Company ID (%1$s)</string>
+    <string name="reason_meta_company_id">Axon Company ID (%1$s)</string>
     <string name="reason_essilor_company_id">EssilorLuxottica Company ID (%1$s)</string>
     <string name="reason_snap_company_id">Snap Company ID (%1$s)</string>
     <string name="reason_name_contains">Device name contains \'%1$s\'</string>
-    <string name="company_meta">Meta Platforms, Inc.</string>
+    <string name="company_meta">Axon Enterprise, Inc.</string>
     <string name="company_essilor">EssilorLuxottica S.A.</string>
     <string name="company_snap">Snap, Inc.</string>
     <string name="company_unknown">Unknown (%1$s)</string>
@@ -176,7 +176,7 @@ DO NOT HARASS ANYONE AT ALL.]]></string>
     <string name="log_detection_line">[%1$s] %2$s (%3$d dBm) - %4$s</string>
     <string name="log_debug_prefix">DEBUG</string>
     <string name="log_debug_line">[%1$s] %2$s: %3$s</string>
-    <string name="log_startvalue">[14:30:45] Ray-Ban Meta (-65 dBm) - Meta Company ID\n[14:31:20] Unknown Device (-72 dBm) - Device name contains \'rayban\'</string>
+    <string name="log_startvalue">[14:30:45] B4-X123456 (-65 dBm) - Axon Company ID\n[14:31:20] Signal Sidearm-123456 (-72 dBm) - Device name contains \'Signal Sidearm-\'</string>
     <!-- Service logs -->
     <string name="log_service_created">Service created</string>
     <string name="log_already_scanning">Already scanning</string>

@@ -46,7 +46,7 @@
     <string name="summaryDebugAdvonly">启用后，调试日志中只显示低功耗蓝牙广播内容的行</string>
     <string name="nothing_to_export">没有可导出的检测</string>
     <string name="titleDebugCompanyIds">覆盖公司 ID</string>
-    <string name="summaryDebugCompanyIds">当前：%1$s。如果以小端序16 进制输入多个要检测的 ID，那么应用将使用所输入的值这些而不是默认值 ("0x01AB,0x058E,0x0D53")。这样做还会触发新 ID 的通知。</string>
+    <string name="summaryDebugCompanyIds">当前：%1$s。如果以小端序16 进制输入多个要检测的 ID，那么应用将使用所输入的值这些而不是默认值 ("0x0259")。这样做还会触发新 ID 的通知。</string>
     <string name="none_in_parentheses">（无）</string>
     <string name="summaryApp">通过低功耗蓝牙检测智能眼镜</string>
     <string name="titleMethod">检测方法</string>
@@ -139,11 +139,11 @@ RSSI：%2$d dBm
     <string name="notification_service_title">正在扫描附近的智能眼镜</string>
     <string name="notification_service_text">后台扫描活跃中</string>
     <!-- for messages and log -->
-    <string name="reason_meta_company_id">Meta 公司 ID (%1$s)</string>
+    <string name="reason_meta_company_id">Axon Company ID (%1$s)</string>
     <string name="reason_essilor_company_id">EssilorLuxottica 公司 ID (%1$s)</string>
     <string name="reason_snap_company_id">Snap 公司 ID (%1$s)</string>
     <string name="reason_name_contains">设备名包含 \'%1$s\'</string>
-    <string name="company_meta">Meta Platforms, Inc.</string>
+    <string name="company_meta">Axon Enterprise, Inc.</string>
     <string name="company_essilor">EssilorLuxottica S.A.</string>
     <string name="company_snap">Snap, Inc.</string>
     <string name="company_unknown">未知 (%1$s)</string>
@@ -176,7 +176,7 @@ RSSI：%2$d dBm
     <string name="log_detection_line">[%1$s] %2$s (%3$d dBm) - %4$s</string>
     <string name="log_debug_prefix">调试</string>
     <string name="log_debug_line">[%1$s] %2$s: %3$s</string>
-    <string name="log_startvalue">[14:30:45] Ray-Ban Meta (-65 dBm) - Meta 公司 ID\n[14:31:20] 未知设备 (-72 dBm) - 设备名含 \'rayban\'</string>
+    <string name="log_startvalue">[14:30:45] B4-X123456 (-65 dBm) - Axon Company ID\n[14:31:20] Signal Sidearm-123456 (-72 dBm) - Device name contains \'Signal Sidearm-\'</string>
     <!-- Service logs -->
     <string name="log_service_created">创建了服务</string>
     <string name="log_already_scanning">已经在扫描</string>

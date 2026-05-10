@@ -68,21 +68,18 @@ Flags:
 Manufacturer Specific Data:
   Length: 0x1A
   Type:   Manufacturer Specific Data (0xFF)
-  Company ID: 0x058E (Meta Platforms Technologies, LLC)
-  Data: 4D 45 54 41 5F 52 42 5F 47 4C 41 53 53
+  Company ID: 0x0259 (Axon Enterprise, Inc.)
+  Data: 42 34 2D 58 31 32 33 34 35 36
 
 Service UUIDs:
   Complete List of 16-bit Service UUIDs
   0xFEAA
 ```
-- According to the [Bluetooth SIG assigned numbers repo](www.bluetooth.com/specifications/assigned-numbers/), we may use these company IDs:
-  - `0x01AB` for `Meta Platforms, Inc. (formerly Facebook)`
-  - `0x058E` for `Meta Platforms Technologies, LLC`
-  - `0x0D53` for `Luxottica Group S.p.A` (who manufactures the Meta Ray-Bans)
-  - `0x03C2` for `Snapchat, Inc.` (that makes SNAP Spectacles)
+- According to the [Bluetooth SIG assigned numbers repo](www.bluetooth.com/specifications/assigned-numbers/), we may use this company ID:
+  - `0x0259` for `Axon Enterprise, Inc.`
     
   They are **immutable and mandatory**. Of course, Meta and other manufacturers also have other products that come with Bluetooth and therefore their ID, e.g. VR Headsets. Therefore, using these company ID codes for the app's scanning process is prone to false positives. But if you can't see someone wearing an Occulus Rift around you and there are no buildings where they could hide, chances are good that it's smart glasses instead.
-- During pairing, the smart glasses usually emit their product name, so we can scan for that, too. But it's rare we will see that in the field. People with the intention to use smart glasses in bars, pubs, on the street, and elsewhere usually prepare for that beforehand.
+- During pairing, supported devices may also emit product names such as `B3-X[Serial_Number]`, `B4-X[Serial_Number]`, or `Signal Sidearm-[Serial_Number]`, so we can scan for those, too. But it's rare we will see that in the field. People with the intention to use such devices in bars, pubs, on the street, and elsewhere usually prepare for that beforehand.
 - When the app recognised a Bluetooth Low Energy (BLE) device with a sufficient signal strength (see RSI below), it will push an alert message. This shall help you to act accordingly.
 
 ## Features
@@ -110,7 +107,7 @@ RSSI drops roughly according to<br/>
 - Therefore, the default RSSI threshold of -75 dBm corresponds to about 10 to 15 meters in open space and 3 to 10 meters indoors or in crowded spaces. You got a good chance to spot that smart glasses wearing person like that.
 - *Nearby Glasses* shows an optional debug log that is exportable (as txt file) and features a copy&paste function. Those are for advanced users (nerds) and for further debugging.
 - Under *Settings*, you may specify the log length, the debugging (display all scan items or only ADV frames).
-- You may also enter some **company IDs** as string of hex values, e.g. `0x01AB,0x058E,0x0D53`. This overrides the built-in detection, so your notification shows up for the new value(s).
+- You may also enter some **company IDs** as string of hex values, e.g. `0x0259`. This overrides the built-in detection, so your notification shows up for the new value(s).
 - For better persistence, it uses Android's *Foreground Service*. You may disable this under *Settings* if you don't need it.
 - The *Notification Cooldown* under *Settings* specifies how much time must pass between two warnings. Default is 10000 ms, which is 10 s. This also applies for the canary, e.g. 10s means, it will stay alert for 10s before it calms itsself again.
 - It is now a bit more localised: <img src="img/canary_hide.svg" align="right" alt="Drawing of a canary that hides underneath a wing" height="100" width="100">

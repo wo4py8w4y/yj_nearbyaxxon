@@ -83,7 +83,7 @@ struct SettingsView: View {
 
                     VStack(alignment: .leading, spacing: 8) {
                         Text(l10n.text("titleDebugCompanyIds"))
-                        TextField("0x01AB,0x058E,0x0D53", text: $settings.debugCompanyIDsText, axis: .vertical)
+                        TextField("0x0259", text: $settings.debugCompanyIDsText, axis: .vertical)
                             .textInputAutocapitalization(.never)
                             .autocorrectionDisabled()
                             .font(.body.monospaced())
