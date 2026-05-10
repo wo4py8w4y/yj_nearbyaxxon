@@ -78,7 +78,7 @@ Service UUIDs:
 - According to the [Bluetooth SIG assigned numbers repo](www.bluetooth.com/specifications/assigned-numbers/), we may use this company ID:
   - `0x0259` for `Axon Enterprise, Inc.`
     
-  They are **immutable and mandatory**. Of course, Meta and other manufacturers also have other products that come with Bluetooth and therefore their ID, e.g. VR Headsets. Therefore, using these company ID codes for the app's scanning process is prone to false positives. But if you can't see someone wearing an Occulus Rift around you and there are no buildings where they could hide, chances are good that it's smart glasses instead.
+  It is **immutable and mandatory**. Of course, Axon and other manufacturers also have other products that come with Bluetooth and may therefore share a company ID or similar naming patterns. Therefore, using this company ID and these device-name patterns for the app's scanning process is still prone to false positives, but it provides a practical heuristic for Axon Body 3, Axon Body 4, and Axon Signal Sidearm devices.
 - During pairing, supported devices may also emit product names such as `B3-X[Serial_Number]`, `B4-X[Serial_Number]`, or `Signal Sidearm-[Serial_Number]`, so we can scan for those, too. But it's rare we will see that in the field. People with the intention to use such devices in bars, pubs, on the street, and elsewhere usually prepare for that beforehand.
 - When the app recognised a Bluetooth Low Energy (BLE) device with a sufficient signal strength (see RSI below), it will push an alert message. This shall help you to act accordingly.
 
