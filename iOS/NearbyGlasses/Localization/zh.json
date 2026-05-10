@@ -93,7 +93,7 @@
   "log_detection_line": "[%1$@] %2$@ (%3$d dBm) - %4$@",
   "log_debug_prefix": "调试",
   "log_debug_line": "[%1$@] %2$@: %3$@",
-  "log_startvalue": "[14:30:45] B4-X123456 (-65 dBm) - Axon Company ID\n[14:31:20] Signal Sidearm-123456 (-72 dBm) - Device name contains 'Signal Sidearm-'",
+  "log_startvalue": "[14:30:45] B4-X123456 (-65 dBm) - Axon 公司 ID\n[14:31:20] Signal Sidearm-123456 (-72 dBm) - 设备名含 'Signal Sidearm-'",
   "log_service_created": "创建了服务",
   "log_already_scanning": "已经在扫描",
   "log_scanning_started": "成功启动了扫描",

@@ -91,7 +91,7 @@
   "dbg_export_error": "Fehler bim Exportiere vom Protokoll",
   "log_unknown_device": "Unbekannt",
   "log_detection_line": "[%1$@] %2$@ (%3$d dBm) - %4$@",
-  "log_startvalue": "[14:30:45] B4-X123456 (-65 dBm) - Axon Company ID\n[14:31:20] Signal Sidearm-123456 (-72 dBm) - Device name contains 'Signal Sidearm-'",
+  "log_startvalue": "[14:30:45] B4-X123456 (-65 dBm) - Axon Firme-ID\n[14:31:20] Signal Sidearm-123456 (-72 dBm) - Grätename enthaltet 'Signal Sidearm-'",
   "log_debug_prefix": "DEBUG",
   "log_debug_line": "[%1$@] %2$@: %3$@",
   "log_service_created": "Dienscht erstellt",
