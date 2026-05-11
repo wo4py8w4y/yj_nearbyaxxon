@@ -7,31 +7,19 @@ import CoreBluetooth
  * the scan functions' heuristics
  */
 struct SmartGlassesHeuristics {
-    static let metaCompanyID1 = 0x01AB
-    static let metaCompanyID2 = 0x058E
-    static let essilorCompanyID = 0x0D53
-    static let snapCompanyID = 0x03C2
+    static let axonCompanyID = 0x0259
 
     static func reasons(companyID: Int?, deviceName: String?, l10n: LanguageManager) -> [String] {
         var reasons: [String] = []
 
-        if companyID == metaCompanyID1 {
-            reasons.append(l10n.text("reason_meta_company_id", "0x01AB"))
-        }
-        if companyID == metaCompanyID2 {
-            reasons.append(l10n.text("reason_meta_company_id", "0x058E"))
-        }
-        if companyID == essilorCompanyID {
-            reasons.append(l10n.text("reason_essilor_company_id", "0x0D53"))
-        }
-        if companyID == snapCompanyID {
-            reasons.append(l10n.text("reason_snap_company_id", "0x03C2"))
+        if companyID == axonCompanyID {
+            reasons.append(l10n.text("reason_meta_company_id", "0x0259"))
         }
 
         if let name = deviceName?.lowercased() {
-            if name.contains("rayban") { reasons.append(l10n.text("reason_name_contains", "rayban")) }
-            if name.contains("ray-ban") { reasons.append(l10n.text("reason_name_contains", "ray-ban")) }
-            if name.contains("ray ban") { reasons.append(l10n.text("reason_name_contains", "ray ban")) }
+            if name.contains("b3-x") { reasons.append(l10n.text("reason_name_contains", "B3-X")) }
+            if name.contains("b4-x") { reasons.append(l10n.text("reason_name_contains", "B4-X")) }
+            if name.contains("signal sidearm-") { reasons.append(l10n.text("reason_name_contains", "Signal Sidearm-")) }
         }
 
         return reasons
@@ -39,12 +27,8 @@ struct SmartGlassesHeuristics {
 
     static func companyName(for companyID: Int, l10n: LanguageManager) -> String {
         switch companyID {
-        case metaCompanyID1, metaCompanyID2:
+        case axonCompanyID:
             return l10n.text("company_meta")
-        case essilorCompanyID:
-            return l10n.text("company_essilor")
-        case snapCompanyID:
-            return l10n.text("company_snap")
         default:
             return l10n.text("company_unknown", String(format: "0x%04X", companyID))
         }

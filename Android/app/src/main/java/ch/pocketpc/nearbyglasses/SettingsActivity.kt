@@ -102,7 +102,7 @@ class SettingsActivity : AppCompatActivity() {
                 editText.post {editText.setSelection(editText.text.length)}
             }
             debugIdsPref?.setOnBindEditTextListener { editText ->
-                editText.hint = "0x01AB,0x01AC,..."
+                editText.hint = "0x0259,0x1234,..."
                 editText.setSingleLine(true)
                 editText.post {editText.setSelection(editText.text.length)}
             }

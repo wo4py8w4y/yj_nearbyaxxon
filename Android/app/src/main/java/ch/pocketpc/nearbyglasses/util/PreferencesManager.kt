@@ -93,7 +93,7 @@ class PreferencesManager(context: Context) {
                 .map { it.trim() }
                 .filter { it.isNotEmpty() }
                 .mapNotNull { token ->
-                    // Accept: "0x01AB", "01AB", "427" etc.
+                    // Accept: "0x0259", "0259", "601" etc.
                     val t = token.lowercase(Locale.ROOT)
                     when {
                         t.startsWith("0x") -> t.removePrefix("0x").toIntOrNull(16)
