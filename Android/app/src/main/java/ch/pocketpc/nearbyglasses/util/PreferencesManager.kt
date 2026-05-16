@@ -20,6 +20,8 @@ class PreferencesManager(context: Context) {
 
         private const val KEY_DEBUG_ADVONLY = "debug_advonly"
         private const val KEY_DEBUG_COMPANY_IDS = "debug_company_ids"
+        private const val KEY_SCAN_FILTERS = "scan_filters"
+        private const val KEY_SCAN_MANUFACTURER_FILTERS = "scan_manufacturer_filters"
 
         //set default values
         private const val DEFAULT_RSSI_THRESHOLD = -75
@@ -32,6 +34,20 @@ class PreferencesManager(context: Context) {
         private const val DEFAULT_DEBUG_ADVONLY = true
         private const val KEY_CANARY_MODE = "canary_mode"
         private const val DEFAULT_CANARY_MODE = true
+        private val DEFAULT_SCAN_FILTERS = setOf(
+            DetectionFilter.COMPANY_ID.prefValue,
+            DetectionFilter.DEVICE_NAME.prefValue
+        )
+    }
+
+    enum class DetectionFilter(val prefValue: String) {
+        COMPANY_ID("company_id"),
+        DEVICE_NAME("device_name");
+
+        companion object {
+            fun fromPrefValue(value: String): DetectionFilter? =
+                entries.firstOrNull { it.prefValue == value }
+        }
     }
 
     var canaryModeEnabled: Boolean
@@ -103,6 +119,16 @@ class PreferencesManager(context: Context) {
                 }
                 .toSet()
         }
+
+    val enabledDetectionFilters: Set<DetectionFilter>
+        get() {
+            val raw = prefs.getStringSet(KEY_SCAN_FILTERS, DEFAULT_SCAN_FILTERS) ?: DEFAULT_SCAN_FILTERS
+            val parsed = raw.mapNotNull { DetectionFilter.fromPrefValue(it) }.toSet()
+            return parsed.ifEmpty { DetectionFilter.entries.toSet() }
+        }
+
+    val selectedManufacturerFilters: Set<String>
+        get() = prefs.getStringSet(KEY_SCAN_MANUFACTURER_FILTERS, emptySet()) ?: emptySet()
 
     fun registerListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
         prefs.registerOnSharedPreferenceChangeListener(listener)

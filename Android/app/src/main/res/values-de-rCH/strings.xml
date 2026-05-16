@@ -8,7 +8,7 @@
     <string name="stopScanning">Scanne schtoppe</string>
     <string name="notScanning">Scannt nid</string>
     <string name="notScanningCanary">Scannt nid</string>
-    <string name="textScanning">Scannen aktiv - E Binochrichtigung zeigt a, wenn Smart Glasses in dr Neechei gfunde wärde.</string>
+    <string name="textScanning">Scannen aktiv - E Binochrichtigung zeigt a, wenn Axon devices in dr Neechei gfunde wärde.</string>
     <string name="textScanningCanary">Scannen aktiv 𓅪 </string>
     <string name="titleCategoryAbout">Iber</string>
     <string name="start_scanning">Scanne schtarte</string>
@@ -20,9 +20,9 @@
     <string name="clearLog">Protokoll löschen</string>
     <string name="exportLog">Protokoll exportiere</string>
     <string name="debug_log">Debug Protokoll</string>
-    <string name="glasses_detected">👓 Warnig: Smart Glasses sind vermuetlig in dr Neechi</string>
-    <string name="info_text">Die App binochrichtigt dich, wenn sich Smart Glasses in dr Neechi befinde. Si binutzt drzue d Firmekennig in de vo dene Brille vrsändete Bluetooth-Date. Doorum chas zu Fählalarme ko (z. B. durch VR-Headsets). Sig dorum bitte voorsichtig, wenn Si sich enere Person neechere, wo e Brille treit. Es chönt sich trotz dr Warnig vo dere App umene normali Brille handle.</string>
-    <string name="info_textCanary">De Kanarievogel zeigt a, wenn sich möglicherwis Smart Glasses in der Neechi befinde. Er suecht nach Bluetooth-Signal. Es cha zu  Fehlalarm ko (z. B. durch VR-Headsets). Siged drum bitte voorsichtig, wenn dir eich enere Person neecherisch, wo e Brille treit. Es chönt sich umene normali Brille handle.</string>
+    <string name="glasses_detected">👓 Warnig: Axon devices sind vermuetlig in dr Neechi</string>
+    <string name="info_text">Die App binochrichtigt dich, wenn sich Axon devices in dr Neechi befinde. Si binutzt drzue d Firmekennig in de vo dene Brille vrsändete Bluetooth-Date. Doorum chas zu Fählalarme ko (z. B. durch VR-Headsets). Sig dorum bitte voorsichtig, wenn Si sich enere Person neechere, wo e Brille treit. Es chönt sich trotz dr Warnig vo dere App umene normali Brille handle.</string>
+    <string name="info_textCanary">De Kanarievogel zeigt a, wenn sich möglicherwis Axon devices in der Neechi befinde. Er suecht nach Bluetooth-Signal. Es cha zu  Fehlalarm ko (z. B. durch VR-Headsets). Siged drum bitte voorsichtig, wenn dir eich enere Person neecherisch, wo e Brille treit. Es chönt sich umene normali Brille handle.</string>
     <string name="warning_title">⚠️ WARNIG! ⚠️ </string>
     <string name="warning_text">ÖBBERT Z BELÄSCHTIGE, will me glaubt, si würde es vrdeckts Überwachigsgrät benutze, cha e Stroftat darstelle. Es cha sogar e schwereri Stroftat si, als sones Grät z benutze. Bitte lossed Si sich zu de örtliche Gsetz zu diem Thema rechtlich berote.\n⚠️ BELÄSCHTIGE SIE NIEMERTS - NIE ⚠️ </string>
     <string name="titleCategoryScanningSettings">Scan-Instellunge</string>
@@ -34,12 +34,12 @@
     <string name="summaryThreshold"> Derzyt: %1$s dBm. Numme Grät mit emne RSSI-Wärt über däm Schwellenwärt erkenne (Standard: -75 dBm, ~3–10 m)</string>
     <string name="titleCategoryNotifications">Binochrichtigungsinstellige</string>
     <string name="titleNotifications">Binochrichtigunge aktiviere</string>
-    <string name="summaryNotifications">Binochrichtigunge aazeige, wenn Smart Glasses-Gräte erkannt werden</string>
+    <string name="summaryNotifications">Binochrichtigunge aazeige, wenn Axon devices-Gräte erkannt werden</string>
     <string name="titleCategoryLogging">Protokolliistellige</string>
     <string name="titleLogging">Protokoll azeige</string>
     <string name="summaryLogging">Azeige vom Erkennigsprotokoll im Hauptbildschirm. S Protokoll wird immer lokal gschpeichert, zum exportiert z werde z chöne.</string>
     <string name="titleDebug">Fehlersuechi</string>
-    <string name="summaryDebug">Alli gefundene Firme-IDs im Protokoll zeige. Binochrichtigunge werden witerhi numme für Smart Glasses azeigt.</string>
+    <string name="summaryDebug">Alli gefundene Firme-IDs im Protokoll zeige. Binochrichtigunge werden witerhi numme für Axon devices azeigt.</string>
     <string name="titleDebugSize">Max. Protokollziile</string>
     <string name="summaryDebugSize"> Derzyt: %1$s. Maximale Anzahl gschpeicherete Ziile im Debug-Protokoll.</string>
     <string name="titleDebugAdvonly">Nur BLE ADV</string>
@@ -48,18 +48,18 @@
     <string name="titleDebugCompanyIds">Überschryb Firme-IDs</string>
     <string name="summaryDebugCompanyIds"> Derzyt: %1$s. Wird eini oder mehrerei IDs im Little-Endian-Hexadezimalschriibwiis  ageh, wird/werde die anstatt vo de Standardwärt (0x01AB,0x058E,0x0D53) gnoh. Dodurch werde au Binochrichtigunge für disi neui IDs usglöst.</string>
     <string name="none_in_parentheses">(keini)</string>
-    <string name="summaryApp">Entdeckt Smart Glasses mittels Bluetooth LE</string>
+    <string name="summaryApp">Entdeckt Axon devices mittels Bluetooth LE</string>
     <string name="titleMethod">Entdeckungsvrfahre</string>
     <string name="summaryMethod">Erkennig basiert uf Firme-IDs in BLE-Adv-Frames und Grätnamevrglich.</string>
     <string name="titleLiability">Haftig und Lizenz</string>
     <string name="summaryLiability"><![CDATA[
-	D App <i>Nearby Glasses</i> her numme ei einzige Zwäck: D App suecht noch Smart Glasses in dr Neechi und warnt.<br/>
-	Dr Autor vor dr App (<a href="https://yves.app">Yves Jeanrenaud</a>) übernimmt keinerlei Haftig für die App oder ihri Funktionalität. D Nutzig  erfolgt auf eigeni Gfoor. Wäge dr technische Konzeption funktioniert d Erkennig von Bluetooth-LE-Gräten mängisch nid wie erwartet. Ich bin kei ausbildete Software-Entwickler. All das hanni in minere Freizyt und mit säbler erworbenem Wüsse gschribe. <b>Falsch-positivi Ergäbnis sin worrschinlig.</b> Das bedüdet, dass d App <i>Nearby Glasses</i> möglicherwis über Smart Glasses in dr Neechi benoochrichtig, obscho s sich in Wirkligkeit um e VR-Headset vom gliiche Hersteller oder es anders Produkt vo dere Firma handlet. Es cha auch vorcho, dass Smart Glasses in dr Neechi nid erkennt werde. Zum gseh, welli Marke derzyt erkennt werde, luegt Si bitte im <a href="https://github.com/yjeanrenaud/yj_nearbyglasses/">Code-Repository uf GitHub</a> noche. Nonemol: Ich bin kei professionelle Software-Entwickler. D App isch und blibt abr gratis und Open Source (FOSS). Si chöne dr Code überpriefe, änder und wider bruuche (untr dr Lizenz): <a href="https://github.com/yjeanrenaud/yj_nearbyglasses">https://github.com/yjeanrenaud/yj_nearbyglasses</a>.<br/>
+	D App <i>Nearby Glasses</i> her numme ei einzige Zwäck: D App suecht noch Axon devices in dr Neechi und warnt.<br/>
+	Dr Autor vor dr App (<a href="https://yves.app">Yves Jeanrenaud</a>) übernimmt keinerlei Haftig für die App oder ihri Funktionalität. D Nutzig  erfolgt auf eigeni Gfoor. Wäge dr technische Konzeption funktioniert d Erkennig von Bluetooth-LE-Gräten mängisch nid wie erwartet. Ich bin kei ausbildete Software-Entwickler. All das hanni in minere Freizyt und mit säbler erworbenem Wüsse gschribe. <b>Falsch-positivi Ergäbnis sin worrschinlig.</b> Das bedüdet, dass d App <i>Nearby Glasses</i> möglicherwis über Axon devices in dr Neechi benoochrichtig, obscho s sich in Wirkligkeit um e VR-Headset vom gliiche Hersteller oder es anders Produkt vo dere Firma handlet. Es cha auch vorcho, dass Axon devices in dr Neechi nid erkennt werde. Zum gseh, welli Marke derzyt erkennt werde, luegt Si bitte im <a href="https://github.com/yjeanrenaud/yj_nearbyglasses/">Code-Repository uf GitHub</a> noche. Nonemol: Ich bin kei professionelle Software-Entwickler. D App isch und blibt abr gratis und Open Source (FOSS). Si chöne dr Code überpriefe, änder und wider bruuche (untr dr Lizenz): <a href="https://github.com/yjeanrenaud/yj_nearbyglasses">https://github.com/yjeanrenaud/yj_nearbyglasses</a>.<br/>
 	Gmacht in dr Hoffnung, dass es nützlig mög si.<br/>
 	D App <i>Nearby Glasses</i> schpeichert keini Detail über Si und sammlet keini Informatione über Si oder Ihres Telifon. Es git kei Telemetrie, kei Werbung und kei anderi Beläschtigunge. Wenn Si d App übere Play Store inschtalliere, cha Google möglicherwis öbbis über Si erfahre und einigi Schtatistigge sammle. D App säbler jedoch macht das nid. <br/>
 	Wenn Si sich entscheide, d Protokolldatei z schpeichere (z exportiere), ligt s ganz bi Ihne und in Ihrer Verantwortig, wohi die Date kömme. D Protokoll werde nur lokal ufzeichnet und nid automatisch mit andere teilt.<br/>
 	<br/>
-	<b>Verwende Si die App mit üsseschter Vorsicht!</b> Wie bereits erwähnt: Es gibt kei Garantie drfür, dass d erkennte Smart Glasses wirklich in dr Neechi sin. Es cha sich um es anders Grät handle, wo technisch (uf BLE-Adv-Ebene) enere Smartbrille ähnlig isch. <br/>
+	<b>Verwende Si die App mit üsseschter Vorsicht!</b> Wie bereits erwähnt: Es gibt kei Garantie drfür, dass d erkennte Axon devices wirklich in dr Neechi sin. Es cha sich um es anders Grät handle, wo technisch (uf BLE-Adv-Ebene) enere Smartbrille ähnlig isch. <br/>
 	Bitte handle Si nid voreilig. <b>Überlege Si, bevor Si auf Nochrichte reagiere</b> (nid nur vo dere App).<br/>
     <br/>
     <b>⚠️ WARNIG! ⚠️</b><br/>
@@ -111,10 +111,10 @@
         <item>it</item>
     </string-array>
     <!-- for notifications -->
-    <string name="notifyText">⚠️ Smart Glasses sind villicht in dr Neechi</string>
+    <string name="notifyText">⚠️ Axon devices sind villicht in dr Neechi</string>
 	<!-- Notification channel names -->
-    <string name="channel_detection_name">Warnmeldunge zur Erkennig von Smart Glasses</string>
-    <string name="channel_detection_description">Benochrichtigt, wenn Smart Glasses erkennt werde</string>
+    <string name="channel_detection_name">Warnmeldunge zur Erkennig von Axon devices</string>
+    <string name="channel_detection_description">Benochrichtigt, wenn Axon devices erkennt werde</string>
     <string name="channel_service_name">Hintergrund-Scan-Dienscht</string>
     <string name="channel_service_description">Zeigt a, wenn die App im Hintergrund scannt.</string>
 	<!-- Detection notification -->
@@ -128,7 +128,7 @@ Firma: %4$s]]></string>
     <string name="notification_unknown_device">Unbekannts Grät</string>
 
 	<!-- Foreground service notification -->
-    <string name="notification_service_title">Scannen nach Smart Glasses in dr Nähe</string>
+    <string name="notification_service_title">Scannen nach Axon devices in dr Nähe</string>
     <string name="notification_service_text">Hintergrund-Scan isch aktiv</string>
 	<!-- for messages and log -->
     <string name="reason_meta_company_id">Meta Firme-ID (%1$s)</string>
@@ -191,12 +191,12 @@ Firma: %4$s]]></string>
     <string name="dbg_ble_start_error">Fehler bim Starten des BLE-Scans</string>
     <string name="dbg_ble_stop_error">Fehler bim Stoppen des BLE-Scans</string>
     <string name="dbg_adv_short">ADV addr=%1$s name=%2$s rssi=%3$d companyId=%4$s len=%5$d</string>
-    <string name="dbg_adv_full">ADV addr=%1$s name=%2$s rssi=%3$d companyId=%4$s mfgLen=%5$d smartglasses=%6$b reason=%7$s</string>
-    <string name="dbg_smart_glasses_detected">Smart Glasses erkennt: %1$s (%2$d dBm)</string>
+    <string name="dbg_adv_full">ADV addr=%1$s name=%2$s rssi=%3$d companyId=%4$s mfgLen=%5$d axonDevices=%6$b reason=%7$s</string>
+    <string name="dbg_smart_glasses_detected">Axon devices erkennt: %1$s (%2$d dBm)</string>
     <string name="dbg_override_match">Debug überschrribe: Firme-ID %1$s stimme überi</string>
     <string name="dbg_placeholder_unknown">?</string>
     <string name="dbg_placeholder_none">keini</string>
     <string name="titleCategoryMode">Modus</string>
-    <string name="summaryCanaryMode">Im Kanarievogel-Modus bikunsch du kei Syschtem-Binochrichtig sondern gsesch es Vögeli. Disse zeigt ah, dass sowit keini Smart Glasses ir Neechi gsichtet worde sind. Sobald sich e Smart-Brille in dr Neechi befindet, vrändert sich s Vögeli ditlig.</string>
+    <string name="summaryCanaryMode">Im Kanarievogel-Modus bikunsch du kei Syschtem-Binochrichtig sondern gsesch es Vögeli. Disse zeigt ah, dass sowit keini Axon devices ir Neechi gsichtet worde sind. Sobald sich e Smart-Brille in dr Neechi befindet, vrändert sich s Vögeli ditlig.</string>
     <string name="titleCanaryMode">Kanarievogel-Modus</string>
 </resources>

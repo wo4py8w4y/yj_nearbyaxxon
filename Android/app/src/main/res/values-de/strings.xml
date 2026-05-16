@@ -8,7 +8,7 @@
     <string name="stopScanning">Scannen stoppen</string>
     <string name="notScanning">Scannt nicht</string>
     <string name="notScanningCanary">Scannt nicht</string>
-    <string name="textScanning">Scannen aktiv - Eine Benachrichtigung zeigt an, wenn Smart Glasses in der Nähe gefunden werden</string>
+    <string name="textScanning">Scannen aktiv - Eine Benachrichtigung zeigt an, wenn Axon devices in der Nähe gefunden werden</string>
     <string name="textScanningCanary">Scannen aktiv 𓅪 </string>
     <string name="titleCategoryAbout">Über</string>
     <string name="start_scanning">Scannen starten</string>
@@ -20,9 +20,9 @@
     <string name="clearLog">Protokoll löschen</string>
     <string name="exportLog">Protokoll exportieren</string>
     <string name="debug_log">Debug Protokoll</string>
-    <string name="glasses_detected">👓 Warnung: Smart Glasses sind vermutlich in der Nähe</string>
-    <string name="info_text">Diese App benachrichtigt, wenn sich Smart Glasses in der Nähe befinden. Sie nutzt dazu die Unternehmenskennungen in den von diesen Brillen gesendeten Bluetooth-Daten. Daher kann es zu Fehlalarmen kommen (z. B. durch VR-Headsets). Seien Sie daher bitte vorsichtig, wenn Sie sich einer Person nähern, die eine Brille trägt. Es könnte sich trotz der Warnung dieser App um eine normale Brille handeln.</string>
-    <string name="info_textCanary">Dieser Kanarienvogel zeigt an, wenn sich möglicherweise Smart Glasses in der Nähe befindet. Er sucht nach Bluetooth-Identifikatoren. Es kann zu Fehlalarmen kommen (z. B. durch VR-Headsets). Seien Sie daher bitte vorsichtig, wenn Sie sich einer Person nähern, die eine Brille trägt. Es könnte sich um eine normale Brille handeln.</string>
+    <string name="glasses_detected">👓 Warnung: Axon devices sind vermutlich in der Nähe</string>
+    <string name="info_text">Diese App benachrichtigt, wenn sich Axon devices in der Nähe befinden. Sie nutzt dazu die Unternehmenskennungen in den von diesen Brillen gesendeten Bluetooth-Daten. Daher kann es zu Fehlalarmen kommen (z. B. durch VR-Headsets). Seien Sie daher bitte vorsichtig, wenn Sie sich einer Person nähern, die eine Brille trägt. Es könnte sich trotz der Warnung dieser App um eine normale Brille handeln.</string>
+    <string name="info_textCanary">Dieser Kanarienvogel zeigt an, wenn sich möglicherweise Axon devices in der Nähe befindet. Er sucht nach Bluetooth-Identifikatoren. Es kann zu Fehlalarmen kommen (z. B. durch VR-Headsets). Seien Sie daher bitte vorsichtig, wenn Sie sich einer Person nähern, die eine Brille trägt. Es könnte sich um eine normale Brille handeln.</string>
     <string name="warning_title">⚠️ WARNUNG! ⚠️ </string>
     <string name="warning_text">JEMANDEN ZU BEDRÄNGEN, weil man glaubt, sie würden ein verdecktes Überwachungsgerät tragen, kann eine Strafttat darstellen. Es kann sogar eine schwerer sein, als solch ein Gerät zu benutzen. Bitte lassen Sie sich bezüglich der örtlichen Gesetze zu diesem Thema rechtlich beraten.\n⚠️ BELÄSTIGEN SIE NIEMANDEN - NIE ⚠️ </string>
     <string name="titleCategoryScanningSettings">Scan-Einstellungen</string>
@@ -34,12 +34,12 @@
     <string name="summaryThreshold">Derzeit: %1$s dBm. Nur Geräte mit einem RSSI-Wert über diesem Schwellenwert erkennen (Standard: -75 dBm, ~3–10 m)</string>
     <string name="titleCategoryNotifications">Benachrichtigungseinstellungen</string>
     <string name="titleNotifications">Benachrichtigungen aktivieren</string>
-    <string name="summaryNotifications">Benachrichtigungen anzeigen, wenn Smart Glasses-Geräte erkannt werden</string>
+    <string name="summaryNotifications">Benachrichtigungen anzeigen, wenn Axon devices-Geräte erkannt werden</string>
     <string name="titleCategoryLogging">Protokolleinstellungen</string>
     <string name="titleLogging">Protokoll anzeigen</string>
     <string name="summaryLogging">Anzeige des Erkennungsprotokolls im Hauptbildschirm. Das Protokoll wird immer lokal gespeichert, um exportiert werden zu können.</string>
     <string name="titleDebug">Fehlersuche</string>
-    <string name="summaryDebug">Alle gefundenen Unternehmens-IDs im Protokoll zeigen. Benachrichtigungen werden weiterhin nur für Smart Glasses angezeigt.</string>
+    <string name="summaryDebug">Alle gefundenen Unternehmens-IDs im Protokoll zeigen. Benachrichtigungen werden weiterhin nur für Axon devices angezeigt.</string>
     <string name="titleDebugSize">Max. Protokollzeilen</string>
     <string name="summaryDebugSize">Derzeit: %1$s. Maximale Anzahl der im Debug-Protokoll gespeicherten Zeilen.</string>
     <string name="titleDebugAdvonly">Nur BLE ADV</string>
@@ -48,18 +48,18 @@
     <string name="titleDebugCompanyIds">Überschreibe Unternehmens-IDs</string>
     <string name="summaryDebugCompanyIds">Derzeit: %1$s. Wird eine oder mehrere IDs in Little-Endian-Hexadezimalschreibweise angegeben, wird/werden diese anstelle der Standardwerte (0x01AB,0x058E,0x0D53) verwendet. Dadurch werden auch Benachrichtigungen für diese neuen IDs ausgelöst.</string>
     <string name="none_in_parentheses">(keine)</string>
-    <string name="summaryApp">Entdeckt Smart Glasses mittels Bluetooth LE</string>
+    <string name="summaryApp">Entdeckt Axon devices mittels Bluetooth LE</string>
     <string name="titleMethod">Entdeckungsverfahren</string>
     <string name="summaryMethod">Erkennung basierend auf Unternehmens-IDs in BLE-Adv-Frames und Gerätenamenabgleich.</string>
     <string name="titleLiability">Haftung und Lizenz</string>
     <string name="summaryLiability"><![CDATA[
-	Die App <i>Nearby Glasses</i> hat nur einen einzigen Zweck: Die App sucht nach Smart Glasses in der Nähe und warnt. <br/>
-	Der Autor der App (<a href="https://yves.app">Yves Jeanrenaud</a>) übernimmt keinerlei Haftung für diese App oder ihre Funktionalität. Die Nutzung erfolgt auf eigene Gefahr. Aufgrund der technischen Konzeption funktioniert die Erkennung von Bluetooth-LE-Geräten manchmal nicht wie erwartet. Ich bin kein ausgebildeter Software-Entwickler. All dies habe ich in meiner Freizeit und mit selbst erworbenem Wissen geschrieben. <b>Falsch-positive Ergebnisse sind wahrscheinlich.</b> Das bedeutet, dass die App <i>Nearby Glasses</i> möglicherweise über Smart Glasses in der Nähe benachrichtigt, obwohl es sich in Wirklichkeit um ein VR-Headset desselben Herstellers oder ein anderes Produkt dieses Unternehmens handelt. Es kann auch vorkommen, dass Smart Glasses in der Nähe nicht erkannt werden. Um zu sehen, welche Marken derzeit erkannt werden, sehen Sie bitte im <a href="https://github.com/yjeanrenaud/yj_nearbyglasses/">Code-Repository auf GitHub</a> nach. Nochmals: Ich bin kein professioneller Software-Entwickler. Diese App ist und bleibt jedoch kostenlos und Open Source (FOSS). Sie können den Code überprüfen, ändern und wiederverwenden (unter der Lizenz): <a href="https://github.com/yjeanrenaud/yj_nearbyglasses">https://github.com/yjeanrenaud/yj_nearbyglasses</a>.<br/>
+	Die App <i>Nearby Glasses</i> hat nur einen einzigen Zweck: Die App sucht nach Axon devices in der Nähe und warnt. <br/>
+	Der Autor der App (<a href="https://yves.app">Yves Jeanrenaud</a>) übernimmt keinerlei Haftung für diese App oder ihre Funktionalität. Die Nutzung erfolgt auf eigene Gefahr. Aufgrund der technischen Konzeption funktioniert die Erkennung von Bluetooth-LE-Geräten manchmal nicht wie erwartet. Ich bin kein ausgebildeter Software-Entwickler. All dies habe ich in meiner Freizeit und mit selbst erworbenem Wissen geschrieben. <b>Falsch-positive Ergebnisse sind wahrscheinlich.</b> Das bedeutet, dass die App <i>Nearby Glasses</i> möglicherweise über Axon devices in der Nähe benachrichtigt, obwohl es sich in Wirklichkeit um ein VR-Headset desselben Herstellers oder ein anderes Produkt dieses Unternehmens handelt. Es kann auch vorkommen, dass Axon devices in der Nähe nicht erkannt werden. Um zu sehen, welche Marken derzeit erkannt werden, sehen Sie bitte im <a href="https://github.com/yjeanrenaud/yj_nearbyglasses/">Code-Repository auf GitHub</a> nach. Nochmals: Ich bin kein professioneller Software-Entwickler. Diese App ist und bleibt jedoch kostenlos und Open Source (FOSS). Sie können den Code überprüfen, ändern und wiederverwenden (unter der Lizenz): <a href="https://github.com/yjeanrenaud/yj_nearbyglasses">https://github.com/yjeanrenaud/yj_nearbyglasses</a>.<br/>
 	Erstellt in der Hoffnung, dass es nützlich sein möge.<br/>
 	Die App <i>Nearby Glasses</i> speichert keine Details über sie und sammelt keine Informationen über sie oder Ihr Telefon. Es gibt keine Telemetrie, keine Werbung und keine anderen Belästigungen. Wenn sie die App über den Play Store installieren, kann Google möglicherweise etwas über sie erfahren und einige Statistiken sammeln. Die App selbst tut dies jedoch nicht. <br/>
 	Wenn sie sich dafür entscheiden, die Logdatei zu speichern (zu exportieren), liegt es ganz bei ihnen und in ihrer Verantwortung, wohin diese Daten gelangen. Die Protokolle werden nur lokal aufgezeichnet und nicht automatisch mit anderen geteilt.<br/>
 	<br/>
-	<b>Verwenden sie die App mit äußerster Vorsicht!</b> Wie bereits erwähnt: Es gibt keine Garantie dafür, dass die erkannten Smart Glasses wirklich in der Nähe sind. Es könnte sich um ein anderes Gerät handeln, das technisch (auf BLE-Adv-Ebene) einer Smartbrille ähnelt. <br/>
+	<b>Verwenden sie die App mit äußerster Vorsicht!</b> Wie bereits erwähnt: Es gibt keine Garantie dafür, dass die erkannten Axon devices wirklich in der Nähe sind. Es könnte sich um ein anderes Gerät handeln, das technisch (auf BLE-Adv-Ebene) einer Smartbrille ähnelt. <br/>
 	Bitte handeln sie nicht voreilig. <b>Überlegen sie, bevor Sie auf Nachrichten reagieren</b> (nicht nur aus dieser App).<br/>
 	<b>⚠️ WARNUNG! ⚠️ </b>
     <b>JEMANDEN ZU BEDRÄNGEN</b>, weil man <i>glaubt</i>, sie würden ein verdecktes Überwachungsgerät tragen, kann eine Strafttat darstellen. Es kann sogar eine schwerer sein, als solch ein Gerät zu benutzen. Bitte lassen Sie sich bezüglich der örtlichen Gesetze zu diesem Thema rechtlich beraten.<br/>
@@ -111,10 +111,10 @@
         <item>it</item>
     </string-array>
     <!-- for notifications -->
-    <string name="notifyText">⚠️ Smart Glasses befinden sich vielleicht in der Nähe</string>
+    <string name="notifyText">⚠️ Axon devices befinden sich vielleicht in der Nähe</string>
 	<!-- Notification channel names -->
-    <string name="channel_detection_name">Warnmeldungen zur Erkennung von Smart Glasses</string>
-    <string name="channel_detection_description">Benachrichtigt, wenn Smart Glasses erkannt werden</string>
+    <string name="channel_detection_name">Warnmeldungen zur Erkennung von Axon devices</string>
+    <string name="channel_detection_description">Benachrichtigt, wenn Axon devices erkannt werden</string>
     <string name="channel_service_name">Hintergrund-Scan-Dienst</string>
     <string name="channel_service_description">Zeigt an, wenn die App im Hintergrund scannt.</string>
 	<!-- Detection notification -->
@@ -128,7 +128,7 @@ Firma: %4$s]]></string>
     <string name="notification_unknown_device">Unbekanntes Gerät</string>
 
 	<!-- Foreground service notification -->
-    <string name="notification_service_title">Scannen nach Smart Glasses  in der Nähe</string>
+    <string name="notification_service_title">Scannen nach Axon devices  in der Nähe</string>
     <string name="notification_service_text">Hintergrund-Scan ist aktiv</string>
 	<!-- for messages and log -->
     <string name="reason_meta_company_id">Meta Unternehmens-ID (%1$s)</string>
@@ -191,8 +191,8 @@ Firma: %4$s]]></string>
     <string name="dbg_ble_start_error">Fehler beim Starten des BLE-Scans</string>
     <string name="dbg_ble_stop_error">Fehler beim Stoppen des BLE-Scans</string>
     <string name="dbg_adv_short">ADV addr=%1$s name=%2$s rssi=%3$d companyId=%4$s len=%5$d</string>
-    <string name="dbg_adv_full">ADV addr=%1$s name=%2$s rssi=%3$d companyId=%4$s mfgLen=%5$d smartglasses=%6$b reason=%7$s</string>
-    <string name="dbg_smart_glasses_detected">Smart Glasses erkannt: %1$s (%2$d dBm)</string>
+    <string name="dbg_adv_full">ADV addr=%1$s name=%2$s rssi=%3$d companyId=%4$s mfgLen=%5$d axonDevices=%6$b reason=%7$s</string>
+    <string name="dbg_smart_glasses_detected">Axon devices erkannt: %1$s (%2$d dBm)</string>
     <string name="dbg_override_match">Debug überschrieben: Unternehmens-ID %1$s übereinstimmend</string>
     <string name="dbg_placeholder_unknown">?</string>
     <string name="dbg_placeholder_none">keine</string>

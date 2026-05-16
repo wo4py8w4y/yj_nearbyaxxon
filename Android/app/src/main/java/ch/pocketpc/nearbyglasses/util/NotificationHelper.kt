@@ -32,10 +32,10 @@ class NotificationHelper(private val context: Context) {
             // Detection channel (high priority)
             val detectionChannel = NotificationChannel(
                 CHANNEL_ID_DETECTION,
-                context.getString(R.string.channel_detection_name), //"Smart Glasses Detection Alerts",
+                context.getString(R.string.channel_detection_name), //"Axon devices Detection Alerts",
                 NotificationManager.IMPORTANCE_HIGH
             ).apply {
-                description = context.getString(R.string.channel_detection_description) //description = "Alerts when smart glasses are detected"
+                description = context.getString(R.string.channel_detection_description) //description = "Alerts when Axon devices are detected"
                 enableVibration(true)
                 setShowBadge(true)
             }
@@ -120,7 +120,7 @@ class NotificationHelper(private val context: Context) {
         
         return NotificationCompat.Builder(context, CHANNEL_ID_SERVICE)
             .setSmallIcon(R.drawable.ic_bluetooth_searching)
-            //.setContentTitle("Scanning for smart glasses nearby")
+            //.setContentTitle("Scanning for Axon devices nearby")
             //.setContentText("Background scanning is active")
             .setContentTitle(context.getString(R.string.notification_service_title))
             .setContentText(context.getString(R.string.notification_service_text))

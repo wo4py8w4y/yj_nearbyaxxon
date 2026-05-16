@@ -9,9 +9,9 @@ import androidx.preference.EditTextPreference
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import androidx.preference.ListPreference
+import androidx.preference.MultiSelectListPreference
 import android.os.Handler
 import android.os.Looper
-import androidx.preference.PreferenceManager
 import androidx.preference.SwitchPreferenceCompat
 
 class SettingsActivity : AppCompatActivity() {
@@ -43,6 +43,7 @@ class SettingsActivity : AppCompatActivity() {
             val rssiPref = findPreference<EditTextPreference>("rssi_threshold")
             val debugIdsPref = findPreference<EditTextPreference>("debug_company_ids")
             val debugMaxLinesPref = findPreference<EditTextPreference>("debug_max_lines")
+            val scanFiltersPref = findPreference<MultiSelectListPreference>("scan_filters")
             val canaryPref = findPreference<SwitchPreferenceCompat>("canary_mode")
             val notificationsPref = findPreference<SwitchPreferenceCompat>("enable_notifications")
             val loggingPref = findPreference<SwitchPreferenceCompat>("logging_enabled")
@@ -69,6 +70,17 @@ class SettingsActivity : AppCompatActivity() {
                     //if (ids.isBlank()) "(none)" else ids
                     if (ids.isBlank()) getString(R.string.none_in_parentheses) else ids
                 )
+
+                val selectedValues = scanFiltersPref?.values.orEmpty()
+                val selectedLabels = scanFiltersPref?.entryValues
+                    ?.mapIndexedNotNull { index, value ->
+                        if (value.toString() in selectedValues) scanFiltersPref.entries[index].toString() else null
+                    }
+                    .orEmpty()
+                val summaryValue = selectedLabels.joinToString(", ").ifBlank {
+                    getString(R.string.none_in_parentheses)
+                }
+                scanFiltersPref?.summary = getString(R.string.summaryScanFiltersCurrent, summaryValue)
             }
             fun refreshCanaryLocks(
                 canaryOn: Boolean = canaryPref?.isChecked == true,
@@ -160,6 +172,22 @@ class SettingsActivity : AppCompatActivity() {
                     if (s.isBlank()) getString(R.string.none_in_parentheses) else s
                 )
                 true
+            }
+            scanFiltersPref?.setOnPreferenceChangeListener { pref, newValue ->
+                val selected = (newValue as? Set<*>)?.filterIsInstance<String>()?.toSet().orEmpty()
+                if (selected.isEmpty()) {
+                    false
+                } else {
+                    val p = pref as MultiSelectListPreference
+                    val labels = p.entryValues.mapIndexedNotNull { index, value ->
+                        if (value.toString() in selected) p.entries[index].toString() else null
+                    }
+                    pref.summary = getString(
+                        R.string.summaryScanFiltersCurrent,
+                        labels.joinToString(", ")
+                    )
+                    true
+                }
             }
             // now get current language
             val languagePref = findPreference<ListPreference>("app_language")

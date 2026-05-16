@@ -20,7 +20,7 @@
   "debug_log": "调试日志",
   "glasses_detected": "👓 警告：附近可能有智能眼镜",
   "info_text": "本应用在附近可能有智能眼镜时通知您。 它使用智能眼镜所发送蓝牙数据中的公司标识符。因此可能有误报（比如，来自 VR 耳机）。因而，在靠近附近戴眼睛的人时请小心行事。虽然应用会示警，但也许这些眼镜并不智能。",
-  "info_textCanary": "This canary shows you when smart glasses might be nearby. It looks for Bluetooth identificators. False positives are likely (e.g. from VR headsets). Hence, please proceed with caution when approaching a person nearby wearing glasses. They might just be regular glasses.",
+  "info_textCanary": "This canary shows you when Axon devices may be nearby. It looks for Bluetooth identifiers. False positives are likely (e.g. from VR headsets). Hence, please proceed with caution when approaching a person nearby wearing glasses. They might just be regular glasses.",
   "warning_title": "警告",
   "warning_text": "因为某人可能佩戴了隐蔽的监视设备而进行骚扰也许是刑事犯罪。这么做比起使用这样的设备可能更加严重。就此问题请寻求所在地的法律咨询。\n别骚扰任何人",
   "titleCategoryScanningSettings": "扫描设置",
@@ -120,7 +120,7 @@
   "dbg_placeholder_unknown": "?",
   "dbg_placeholder_none": "无",
   "titleCategoryMode": "Mode",
-  "summaryCanaryMode": "In Canary Mode you will not get system notifications, but you see a bird that signifies no smart glasses have been spotted nearby so far. In case of smart glasses nearby, the bird will change noticeably.",
+  "summaryCanaryMode": "In Canary Mode you will not get system notifications, but you see a bird that signifies no Axon devices have been spotted nearby so far. In case of Axon devices nearby, the bird will change noticeably.",
   "titleCanaryMode": "Canary Mode",
   "ios_foreground_only_notice": "Scanning works only while the app is open and active on iOS.",
   "ios_bluetooth_settings": "Open Settings",
@@ -138,7 +138,7 @@
   "ios_settings_cooldown_footer": "Minimum delay between canary alert resets and exported detection lines.",
   "ios_start_scan_hint": "Tap Start Scanning to begin.",
   "ios_stop_when_backgrounded": "Scanning stops automatically when the app leaves the foreground.",
-  "ios_status_detected": "Possible smart glasses signal seen recently",
+  "ios_status_detected": "Possible Axon devices signal seen recently",
   "ios_status_scanning": "Scanning active",
   "ios_status_idle": "Not scanning",
   "ios_export_menu": "Export Log",
@@ -152,5 +152,9 @@
   "ios_debug_section_title": "Debug",
   "ios_scanning_section_title": "Scanning",
   "ios_language_system": "System default",
-  "ios_detection_reason_none": "Matched smart glasses heuristic"
+  "ios_detection_reason_none": "Matched Axon devices heuristic",
+  "titleScanFilters": "Bluetooth Scan Filters",
+  "summaryScanFilters": "Select which Bluetooth scan filters are active.",
+  "scanFilterCompanyId": "Company ID match",
+  "scanFilterDeviceName": "Device name match"
 }

@@ -22,6 +22,15 @@
             app:iconSpaceReserved="false"
             app:useSimpleSummaryProvider="false" />
 
+        <MultiSelectListPreference
+            android:defaultValue="@array/pref_scan_filter_default_values"
+            android:entries="@array/pref_scan_filter_entries"
+            android:entryValues="@array/pref_scan_filter_values"
+            android:key="scan_filters"
+            android:summary="@string/summaryScanFilters"
+            android:title="@string/titleScanFilters"
+            app:iconSpaceReserved="false" />
+
         <ListPreference
             android:key="app_language"
             android:title="@string/pref_language_title"

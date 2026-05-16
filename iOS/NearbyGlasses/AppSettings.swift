@@ -16,6 +16,8 @@ final class AppSettings: ObservableObject {
         static let debugAdvOnly = "debug_advonly"
         static let debugMaxLines = "debug_max_lines"
         static let debugCompanyIDs = "debug_company_ids"
+        static let scanFilters = "scan_filters"
+        static let scanManufacturerFilters = "scan_manufacturer_filters"
     }
 
     @Published var rssiThreshold: Int { didSet { save(Keys.rssiThreshold, value: rssiThreshold) } }
@@ -25,6 +27,8 @@ final class AppSettings: ObservableObject {
     @Published var debugAdvOnly: Bool { didSet { save(Keys.debugAdvOnly, value: debugAdvOnly) } }
     @Published var debugMaxLines: Int { didSet { save(Keys.debugMaxLines, value: debugMaxLines) } }
     @Published var debugCompanyIDsText: String { didSet { save(Keys.debugCompanyIDs, value: debugCompanyIDsText) } }
+    @Published var selectedScanFiltersRaw: [String] { didSet { save(Keys.scanFilters, value: selectedScanFiltersRaw) } }
+    @Published var selectedManufacturerFiltersRaw: [String] { didSet { save(Keys.scanManufacturerFilters, value: selectedManufacturerFiltersRaw) } }
 
     init(defaults: UserDefaults = .standard) {
         let storedRSSI = defaults.object(forKey: Keys.rssiThreshold) as? Int ?? Int(defaults.string(forKey: Keys.rssiThreshold) ?? "-75") ?? -75
@@ -38,6 +42,13 @@ final class AppSettings: ObservableObject {
         self.debugAdvOnly = defaults.object(forKey: Keys.debugAdvOnly) as? Bool ?? false
         self.debugMaxLines = min(5000, max(50, storedMaxLines))
         self.debugCompanyIDsText = defaults.string(forKey: Keys.debugCompanyIDs) ?? ""
+        let storedScanFilters = defaults.array(forKey: Keys.scanFilters) as? [String]
+        let defaultScanFilters = [
+            BLEScanner.ScanFilter.companyID.rawValue,
+            BLEScanner.ScanFilter.deviceName.rawValue
+        ]
+        self.selectedScanFiltersRaw = (storedScanFilters?.isEmpty == false) ? (storedScanFilters ?? defaultScanFilters) : defaultScanFilters
+        self.selectedManufacturerFiltersRaw = defaults.array(forKey: Keys.scanManufacturerFilters) as? [String] ?? []
     }
 
     var selectedLanguage: AppLanguage {
@@ -61,6 +72,32 @@ final class AppSettings: ObservableObject {
                 return Int(lower, radix: 16)
             }
             .reduce(into: Set<Int>()) { $0.insert($1) }
+    }
+
+    var selectedScanFilters: Set<BLEScanner.ScanFilter> {
+        let parsed = selectedScanFiltersRaw.compactMap(BLEScanner.ScanFilter.init(rawValue:))
+        return parsed.isEmpty ? Set(BLEScanner.ScanFilter.allCases) : Set(parsed)
+    }
+
+    var selectedManufacturerFilters: Set<String> {
+        Set(selectedManufacturerFiltersRaw.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty })
+    }
+
+    func hasScanFilter(_ filter: BLEScanner.ScanFilter) -> Bool {
+        selectedScanFilters.contains(filter)
+    }
+
+    func setScanFilter(_ filter: BLEScanner.ScanFilter, enabled: Bool) {
+        var values = Set(selectedScanFiltersRaw)
+        if enabled {
+            values.insert(filter.rawValue)
+        } else {
+            values.remove(filter.rawValue)
+            if values.isEmpty {
+                values.insert(filter.rawValue)
+            }
+        }
+        selectedScanFiltersRaw = Array(values)
     }
 
     private func save(_ key: String, value: Any) {

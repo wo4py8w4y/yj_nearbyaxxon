@@ -1,6 +1,7 @@
 package ch.pocketpc.nearbyglasses.model
 
 import ch.pocketpc.nearbyglasses.R
+import ch.pocketpc.nearbyglasses.util.PreferencesManager
 
 import android.content.Context
 import android.os.Parcelable
@@ -51,18 +52,27 @@ data class DetectionEvent(
     companion object {
         const val AXON_COMPANY_ID = 0x0259
 
-        fun isSmartGlasses(context: Context, companyId: Int?, deviceName: String?): Pair<Boolean, String> {
+        fun detectionReasons(
+            context: Context,
+            companyId: Int?,
+            deviceName: String?,
+            enabledFilters: Set<PreferencesManager.DetectionFilter>
+        ): List<String> {
             val reasons = mutableListOf<String>()
 
             // Check company ID
-            if (companyId == AXON_COMPANY_ID) {
+            if (
+                PreferencesManager.DetectionFilter.COMPANY_ID in enabledFilters &&
+                companyId == AXON_COMPANY_ID
+            ) {
                 reasons.add(context.getString(
                     R.string.reason_meta_company_id,
                     "0x0259"))
             }
 
             // Check device name
-            deviceName?.let { name ->
+            if (PreferencesManager.DetectionFilter.DEVICE_NAME in enabledFilters) {
+                deviceName?.let { name ->
                 val nameLower = name.lowercase()
                 when {
                     nameLower.contains("b3-x") -> reasons.add(
@@ -77,6 +87,18 @@ data class DetectionEvent(
                     else -> {} // do nothing
                 }
             }
+            }
+
+            return reasons
+        }
+
+        fun isSmartGlasses(
+            context: Context,
+            companyId: Int?,
+            deviceName: String?,
+            enabledFilters: Set<PreferencesManager.DetectionFilter> = PreferencesManager.DetectionFilter.entries.toSet()
+        ): Pair<Boolean, String> {
+            val reasons = detectionReasons(context, companyId, deviceName, enabledFilters)
 
             return Pair(reasons.isNotEmpty(), reasons.joinToString(", "))
         }

@@ -26,6 +26,29 @@ struct SettingsView: View {
                         }
                     }
 
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(l10n.text("titleScanFilters"))
+                        Text(l10n.text("summaryScanFilters"))
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+
+                        Toggle(
+                            l10n.text("scanFilterCompanyId"),
+                            isOn: Binding(
+                                get: { settings.hasScanFilter(.companyID) },
+                                set: { settings.setScanFilter(.companyID, enabled: $0) }
+                            )
+                        )
+
+                        Toggle(
+                            l10n.text("scanFilterDeviceName"),
+                            isOn: Binding(
+                                get: { settings.hasScanFilter(.deviceName) },
+                                set: { settings.setScanFilter(.deviceName, enabled: $0) }
+                            )
+                        )
+                    }
+
                     Stepper(value: Binding(
                         get: { settings.cooldownMs },
                         set: { settings.cooldownMs = min(600_000, max(0, $0)) }

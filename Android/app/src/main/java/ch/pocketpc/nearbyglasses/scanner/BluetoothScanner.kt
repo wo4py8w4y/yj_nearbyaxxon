@@ -18,6 +18,7 @@ import kotlinx.coroutines.flow.StateFlow
 import android.Manifest
 import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
+import ch.pocketpc.nearbyglasses.util.PreferencesManager
 
 class BluetoothScanner(
     private val context: Context,
@@ -25,6 +26,7 @@ class BluetoothScanner(
     private val debugEnabled: Boolean,
     private val onDebugLog: ((String) -> Unit)?,
     private val debugCompanyIds: Set<Int>,
+    private val enabledDetectionFilters: Set<PreferencesManager.DetectionFilter>,
     private val onDeviceDetected: (DetectionEvent) -> Unit
 ) {
     
@@ -194,13 +196,20 @@ class BluetoothScanner(
             )
         )
 
-        // for to check if this is a smart glasses device (including our debug override)
-        val (isSmartGlassesReal, reasonReal) = DetectionEvent.isSmartGlasses(context,companyId, deviceName)
+        // Check if this is an Axon device (including our debug override)
+        val reasons = DetectionEvent.detectionReasons(
+            context = context,
+            companyId = companyId,
+            deviceName = deviceName,
+            enabledFilters = enabledDetectionFilters
+        )
+        val isSmartGlassesReal = reasons.isNotEmpty()
+        val reasonReal = reasons.joinToString(", ")
         //val overrideMatch = companyId != null && debugCompanyIds.contains(companyId)
         //only when debug is on AND company IDs are entered
         val overrideMatch = debugEnabled && companyId != null && debugCompanyIds.contains(companyId)
 
-        val isSmartGlasses = isSmartGlassesReal || overrideMatch
+        val isAxonDevice = isSmartGlassesReal || overrideMatch
         val reason = when {
             //overrideMatch -> "Debug override: Company ID 0x%04X matched".format(companyId)
             overrideMatch -> context.getString(
@@ -215,7 +224,7 @@ class BluetoothScanner(
                 TAG,
                 "ADV addr=$deviceAddress name=${deviceName ?: "?"} rssi=${result.rssi} " +
                         "companyId=${companyId?.let { "0x%04X".format(it) } ?: "none"} " +
-                        "mfgLen=${manufacturerDataHex?.length?.div(2) ?: 0} smartglasses=$isSmartGlasses reason=$reason"
+                        "mfgLen=${manufacturerDataHex?.length?.div(2) ?: 0} axonDevices=$isSmartGlasses reason=$reason"
             )*/
 
             Log.d(
@@ -227,13 +236,13 @@ class BluetoothScanner(
                     result.rssi,
                     companySafe,
                     manufacturerDataHex?.length?.div(2) ?: 0,
-                    isSmartGlasses,
+                    isAxonDevice,
                     reason
                 )
             )
         }
 
-        if (isSmartGlasses) {
+        if (isAxonDevice) {
             val event = DetectionEvent(
                 timestamp = System.currentTimeMillis(),
                 deviceAddress = deviceAddress,
@@ -247,7 +256,7 @@ class BluetoothScanner(
                 detectionReason = reason
             )
             
-            //Log.d(TAG, "smart glasses detected: ${event.deviceName} (${event.rssi} dBm)")
+            //Log.d(TAG, "Axon devices detected: ${event.deviceName} (${event.rssi} dBm)")
             Log.d(TAG,context.getString(R.string.dbg_smart_glasses_detected,event.deviceName ?: context.getString(R.string.dbg_placeholder_unknown),event.rssi))
             onDeviceDetected(event)
         }

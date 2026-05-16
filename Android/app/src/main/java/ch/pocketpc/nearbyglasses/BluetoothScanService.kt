@@ -101,12 +101,14 @@ class BluetoothScanService : Service() {
         val rssiThreshold = preferencesManager.rssiThreshold
         val debugEnabled = preferencesManager.debugEnabled
         val debugCompanyIds = preferencesManager.debugCompanyIds
+        val enabledDetectionFilters = preferencesManager.enabledDetectionFilters
 
         bluetoothScanner = BluetoothScanner(
             context = this,
             rssiThreshold = rssiThreshold,
             debugEnabled = debugEnabled,
             debugCompanyIds = debugCompanyIds,
+            enabledDetectionFilters = enabledDetectionFilters,
             onDebugLog = { msg ->
                 //Log.d(TAG, msg)          // still goes to Logcat
                 //emitDebug(msg)           // now also goes to UI

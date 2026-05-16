@@ -8,7 +8,7 @@
     <string name="stopScanning">Ferma scansione</string>
     <string name="notScanning">Scansione non attiva</string>
     <string name="notScanningCanary">Scansione non attiva</string>
-    <string name="textScanning">>Scansione attiva - Riceverai una notifica se vengono rilevati smart glasses nelle vicinanze</string>
+    <string name="textScanning">>Scansione attiva - Riceverai una notifica se vengono rilevati Axon devices nelle vicinanze</string>
     <string name="textScanningCanary">Scansione attiva 𓅪 </string>
     <string name="titleCategoryAbout">Informazioni</string>
     <string name="start_scanning">Avvia scansione</string>
@@ -20,9 +20,9 @@
     <string name="clearLog">Cancella log</string>
     <string name="exportLog">Esporta log</string>
     <string name="debug_log">Log di debug</string>
-    <string name="glasses_detected">👓 Attenzione: degli smart glasses potrebbero essere nelle vicinanze</string>
-    <string name="info_text">Quest\'app ti avvisa quando potrebbero esserci smart glasses nelle vicinanze. Utilizza identificatori del produttore presenti nei dati Bluetooth trasmessi da questi dispositivi. Pertanto sono probabili falsi positivi (ad esempio visori VR). Procedi con cautela quando ti avvicini a una persona con occhiali: potrebbero essere normali occhiali nonostante l\'avviso.</string>
-    <string name="info_textCanary">Questo indicatore/Canary ti mostra quando potrebbero esserci smart glasses nelle vicinanze. Cerca identificatori Bluetooth. I falsi positivi sono probabili (es. visori VR). Procedi con cautela: potrebbero essere semplici occhiali.</string>
+    <string name="glasses_detected">👓 Attenzione: degli Axon devices potrebbero essere nelle vicinanze</string>
+    <string name="info_text">Quest\'app ti avvisa quando potrebbero esserci Axon devices nelle vicinanze. Utilizza identificatori del produttore presenti nei dati Bluetooth trasmessi da questi dispositivi. Pertanto sono probabili falsi positivi (ad esempio visori VR). Procedi con cautela quando ti avvicini a una persona con occhiali: potrebbero essere normali occhiali nonostante l\'avviso.</string>
+    <string name="info_textCanary">Questo indicatore/Canary ti mostra quando potrebbero esserci Axon devices nelle vicinanze. Cerca identificatori Bluetooth. I falsi positivi sono probabili (es. visori VR). Procedi con cautela: potrebbero essere semplici occhiali.</string>
     <string name="warning_title">⚠️ ATTENZIONE! ⚠️ </string>
     <string name="warning_text">MOLESTARE qualcuno perché pensi stia indossando un dispositivo di sorveglianza può costituire reato. Potrebbe essere anche più grave dell’uso di tale dispositivo. Informati sulle leggi locali.\n⚠️ NON MOLESTARE NESSUNO. ⚠️  </string>
     <string name="titleCategoryScanningSettings">Impostazioni scansione</string>
@@ -34,12 +34,12 @@
     <string name="summaryThreshold">Attuale: %1$s dBm. Rileva solo dispositivi con RSSI sopra questa soglia (default: -75 dBm, ~3-10 m)</string>
     <string name="titleCategoryNotifications">Impostazioni notifiche</string>
     <string name="titleNotifications">Abilita notifiche</string>
-    <string name="summaryNotifications">Mostra notifiche quando vengono rilevati smart glasses</string>
+    <string name="summaryNotifications">Mostra notifiche quando vengono rilevati Axon devices</string>
     <string name="titleCategoryLogging">Impostazioni log</string>
     <string name="titleLogging">Abilita visualizzazione log</string>
     <string name="summaryLogging">Mostra il log nella schermata principale. Il log è sempre salvato localmente per l\'esportazione.</string>
     <string name="titleDebug">Debug</string>
-    <string name="summaryDebug">Abilita tutti gli ID dei produttori nel log. Le notifiche restano solo per smart glasses.</string>
+    <string name="summaryDebug">Abilita tutti gli ID dei produttori nel log. Le notifiche restano solo per Axon devices.</string>
     <string name="titleDebugSize">Numero massimo righe log</string>
     <string name="summaryDebugSize">Attuale: %1$s. Numero massimo di righe mantenute nel log di debug.</string>
     <string name="titleDebugAdvonly">Solo BLE ADV</string>
@@ -48,7 +48,7 @@
     <string name="titleDebugCompanyIds">Sovrascrivi ID dei produttori</string>
     <string name="summaryDebugCompanyIds">Attuale: %1$s. Se inserisci uno o più ID da rilevare, in little-endian, notazione hex, saranno usati al posto di quelli di default ("0x01AB,0x058E,0x0D53"). Questo attiva notiche anche per i nuovi ID.</string>
     <string name="none_in_parentheses">(nulla)</string>
-    <string name="summaryApp">Rileva smart glasses tramite Bluetooth LE</string>
+    <string name="summaryApp">Rileva Axon devices tramite Bluetooth LE</string>
     <string name="titleMethod">Metodo di rilevamento</string>
     <string name="summaryMethod">Rilevamento basato su ID produttore nei frame BLE di advertising e abbinamento nome dispositivo.</string>
     <string name="titleLiability">Responsabilità e licenza</string>
@@ -114,10 +114,10 @@
         <item>it</item>
     </string-array>
     <!-- for notifications -->
-    <string name="notifyText">⚠️ Degli smart Glasses potrebbero essere nelle vicinanze</string>
+    <string name="notifyText">⚠️ I dispositivi Axon potrebbero essere nelle vicinanze</string>
     <!-- Notification channel names -->
-    <string name="channel_detection_name">Avvisi rilevamento smart glasses</string>
-    <string name="channel_detection_description">Avvisi quando vengono rilevati smart glasses</string>
+    <string name="channel_detection_name">Avvisi rilevamento Axon devices</string>
+    <string name="channel_detection_description">Avvisi quando vengono rilevati Axon devices</string>
 
     <string name="channel_service_name">Servizio scansione in background</string>
     <string name="channel_service_description">Indica quando l\'app sta scansionando in background</string>
@@ -135,7 +135,7 @@ NON MOLESTARE NESSUNO.]]></string>
     <string name="notification_unknown_device">Dispositivo sconosciuto</string>
 
     <!-- Foreground service notification -->
-    <string name="notification_service_title">Scansione smart glasses nelle vicinanze</string>
+    <string name="notification_service_title">Scansione Axon devices nelle vicinanze</string>
     <string name="notification_service_text">Scansione in background attiva</string>
     <!-- for messages and log -->
     <string name="reason_meta_company_id">ID Meta (%1$s)</string>
@@ -198,13 +198,13 @@ NON MOLESTARE NESSUNO.]]></string>
     <string name="dbg_ble_start_error">Errore durante avvio scansione BLE</string>
     <string name="dbg_ble_stop_error">Errore durante arresto scansione BLE</string>
     <string name="dbg_adv_short">Indirizzo ADV=%1$s nome=%2$s rssi=%3$d IDproduttore=%4$s lun=%5$d</string>
-    <string name="dbg_adv_full">Indirizzo ADV=%1$s nome=%2$s rssi=%3$d IDproduttore=%4$s msgLun=%5$d smartglasses=%6$b motivo=%7$s</string>
-    <string name="dbg_smart_glasses_detected">smart glasses rilevati: %1$s (%2$d dBm)</string>
+    <string name="dbg_adv_full">Indirizzo ADV=%1$s nome=%2$s rssi=%3$d IDproduttore=%4$s msgLun=%5$d axonDevices=%6$b motivo=%7$s</string>
+    <string name="dbg_smart_glasses_detected">Axon devices rilevati: %1$s (%2$d dBm)</string>
     <string name="dbg_override_match">Debug override: ID produttore %1$s abbinato</string>
     <string name="dbg_placeholder_unknown">?</string>
     <string name="dbg_placeholder_none">Nulla</string>
     <string name="titleCategoryMode">Modalità</string>
-    <string name="summaryCanaryMode">In modalità Canary non riceverai notifiche ma vedrai un volatile che indica assenza di smart glasses. Se verrano rilevati cambierà.</string>
+    <string name="summaryCanaryMode">In modalità Canary non riceverai notifiche ma vedrai un volatile che indica assenza di Axon devices. Se verrano rilevati cambierà.</string>
     <string name="titleCanaryMode">Modalità Canary</string>
 
 </resources>

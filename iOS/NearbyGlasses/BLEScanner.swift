@@ -9,14 +9,19 @@ import CoreBluetooth
 struct SmartGlassesHeuristics {
     static let axonCompanyID = 0x0259
 
-    static func reasons(companyID: Int?, deviceName: String?, l10n: LanguageManager) -> [String] {
+    static func reasons(
+        companyID: Int?,
+        deviceName: String?,
+        enabledFilters: Set<BLEScanner.ScanFilter>,
+        l10n: LanguageManager
+    ) -> [String] {
         var reasons: [String] = []
 
-        if companyID == axonCompanyID {
+        if enabledFilters.contains(.companyID), companyID == axonCompanyID {
             reasons.append(l10n.text("reason_meta_company_id", "0x0259"))
         }
 
-        if let name = deviceName?.lowercased() {
+        if enabledFilters.contains(.deviceName), let name = deviceName?.lowercased() {
             if name.contains("b3-x") { reasons.append(l10n.text("reason_name_contains", "B3-X")) }
             if name.contains("b4-x") { reasons.append(l10n.text("reason_name_contains", "B4-X")) }
             if name.contains("signal sidearm-") { reasons.append(l10n.text("reason_name_contains", "Signal Sidearm-")) }
@@ -37,10 +42,17 @@ struct SmartGlassesHeuristics {
 
 @MainActor
 final class BLEScanner: NSObject, CBCentralManagerDelegate {
+    enum ScanFilter: String, CaseIterable {
+        case companyID = "company_id"
+        case deviceName = "device_name"
+    }
+
     struct Configuration {
         let rssiThreshold: Int
         let debugEnabled: Bool
         let debugCompanyIDs: Set<Int>
+        let scanFilters: Set<ScanFilter>
+        let manufacturerFilters: Set<String>
     }
 
     private lazy var centralManager = CBCentralManager(delegate: self, queue: .main)
@@ -174,7 +186,12 @@ final class BLEScanner: NSObject, CBCentralManagerDelegate {
             )
         )
 
-        let reasons = SmartGlassesHeuristics.reasons(companyID: companyID, deviceName: deviceName, l10n: languageManager)
+        let reasons = SmartGlassesHeuristics.reasons(
+            companyID: companyID,
+            deviceName: deviceName,
+            enabledFilters: config.scanFilters,
+            l10n: languageManager
+        )
         let overrideMatch = config.debugEnabled && companyID.map(config.debugCompanyIDs.contains) == true
         let isSmartGlasses = !reasons.isEmpty || overrideMatch
         let reasonText: String

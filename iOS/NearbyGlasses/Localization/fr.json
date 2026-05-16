@@ -114,7 +114,7 @@
   "dbg_ble_start_error": "Erreur lors du démarrage du scan BLE",
   "dbg_ble_stop_error": "Erreur lors de l'arrêt du scan BLE",
   "dbg_adv_short": "ADV addr=%1$@ name=%2$@ rssi=%3$d companyId=%4$@ len=%5$d",
-  "dbg_adv_full": "ADV addr=%1$@ name=%2$@ rssi=%3$d companyId=%4$@ mfgLen=%5$d smartglasses=%6$@ reason=%7$@",
+  "dbg_adv_full": "ADV addr=%1$@ name=%2$@ rssi=%3$d companyId=%4$@ mfgLen=%5$d axonDevices=%6$@ reason=%7$@",
   "dbg_smart_glasses_detected": "lunettes intelligentes détectées: %1$@ (%2$d dBm)",
   "dbg_override_match": "Remplacement de débogage: ID d'entreprise %1$@ correspondante",
   "dbg_placeholder_unknown": "?",
@@ -152,5 +152,9 @@
   "ios_debug_section_title": "Débogage",
   "ios_scanning_section_title": "Analyse",
   "ios_language_system": "Par défaut du système",
-  "ios_detection_reason_none": "Heuristique de lunettes intelligentes correspondante"
+  "ios_detection_reason_none": "Heuristique de lunettes intelligentes correspondante",
+  "titleScanFilters": "Bluetooth Scan Filters",
+  "summaryScanFilters": "Select which Bluetooth scan filters are active.",
+  "scanFilterCompanyId": "Company ID match",
+  "scanFilterDeviceName": "Device name match"
 }
